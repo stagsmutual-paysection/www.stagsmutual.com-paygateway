@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stagsmutual - Pinjaman Peribadi</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styling untuk slider (range input) agar kelihatan kemas */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#fcf3f3] font-sans text-gray-800 min-h-screen flex flex-col justify-between max-w-md mx-auto shadow-xl bg-white">
+
+    <div id="main-content" class="flex flex-col justify-between flex-1">
+        
+        <div id="halaman-utama" class="flex flex-col justify-between flex-1">
+            <div class="bg-[#ffe1a8] text-[#b37400] text-xs px-4 py-2 flex items-start gap-2 border-b border-[#ffd27f]">
+                <i class="fas fa-bell mt-0.5"></i>
+                <p>Jika tidak menerima SMS, sila hubungi wakil melalui whatsApp : <a href="https://wa.me/60123456789" target="_blank" class="underline font-semibold text-blue-700">C7IDZZZ6XREXC1</a></p>
+            </div>
+
+            <div class="p-4 space-y-4 flex-1">
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-[#eaf4ff] p-3 rounded-2xl flex flex-col justify-between border border-[#d2e7ff] row-span-2">
+                        <div>
+                            <h3 class="text-[#2b82ea] font-bold text-sm">Perkhidmatan Cekap</h3>
+                            <p class="text-[#e25353] text-[11px] mt-1 font-medium leading-tight">24 jam servis, dana masuk dalam 5 minit</p>
+                        </div>
+                        <div class="flex justify-center mt-3">
+                            <div class="relative w-16 h-16 bg-[#2b82ea]/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-mobile-alt text-[#2b82ea] text-2xl"></i>
+                                <i class="fas fa-coins text-yellow-500 absolute bottom-1 right-1 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f6efff] p-3 rounded-2xl flex justify-between items-start border border-[#ebd9ff]">
+                        <div>
+                            <h3 class="text-[#965eff] font-bold text-sm">Tiada Perbincangan</h3>
+                            <p class="text-[#e25353] text-[11px] mt-0.5 font-medium leading-tight">Tandatangan dalam talian, proses mudah</p>
+                        </div>
+                        <div class="text-[#965eff] bg-[#965eff]/10 p-1.5 rounded-full text-xs">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#ebf5ff] p-3 rounded-2xl flex justify-between items-start border border-[#d2e7ff]">
+                        <div>
+                            <h3 class="text-[#2b82ea] font-bold text-sm">Operasi Sepenuhnya Dalam Talian</h3>
+                            <p class="text-[#e25353] text-[11px] mt-0.5 font-medium leading-tight">Operasi dalam talian, pantas dan mudah</p>
+                        </div>
+                        <div class="text-[#2b82ea] bg-[#2b82ea]/10 p-1.5 rounded-full text-xs">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#1d46f5] to-[#8d1ca7] text-white rounded-2xl p-5 shadow-lg relative">
+                    <div class="absolute top-4 right-4 bg-white/20 p-2 rounded-xl border border-white/30 cursor-pointer hover:bg-white/30 transition">
+                        <i class="fas fa-headset text-xl text-white"></i>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <p class="text-sm text-white/80 font-medium">Jumlah Boleh Dipohon</p>
+                        <h2 class="text-2xl font-bold mt-1">RM1,000~100,000</h2>
+                    </div>
+
+                    <div class="mt-6">
+                        <input 
+                            type="range" 
+                            id="loanSlider" 
+                            min="1000" 
+                            max="100000" 
+                            step="500" 
+                            value="1000" 
+                            class="w-full h-2 bg-white/30 rounded-lg appearance-none cursor-pointer outline-none"
+                            oninput="updateLoanAmount(this.value)"
+                        >
+                    </div>
+
+                    <div class="flex justify-between items-center mt-3">
+                        <p class="text-[11px] text-white/80 leading-tight max-w-[180px]">Sila geser untuk pilih jumlah pinjaman :</p>
+                        <p class="text-xl font-bold text-white" id="loanAmountDisplay">RM1,000</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 border-t border-white/20 mt-5 pt-4 text-center">
+                        <div>
+                            <p class="text-[11px] text-white/70">Tempoh Pinjaman Terlama</p>
+                            <p class="text-base font-bold mt-0.5">91–365hari</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] text-white/70">Kadar faedah minimum pinjaman</p>
+                            <p class="text-base font-bold mt-0.5">0.03%/hari</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button 
+                        onclick="pergiKeBayaran()" 
+                        class="w-full bg-[#2b82ea] hover:bg-[#1a6ed0] text-white font-semibold py-3.5 px-4 rounded-full text-center text-base shadow-md transition transform active:scale-95 cursor-pointer"
+                    >
+                        Membuat Bayaran Balik
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="halaman-bayaran" class="p-4 space-y-4 hidden flex-1">
+            <div class="flex items-center gap-3 border-b border-gray-100 pb-3">
+                <button onclick="kembaliKeUtama()" class="text-gray-600 hover:text-gray-900 cursor-pointer">
+                    <i class="fas fa-arrow-left text-lg"></i>
+                </button>
+                <h2 class="text-lg font-bold text-gray-800">Maklumat Pembayaran Balik</h2>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 text-center">
+                <p class="text-xs text-gray-500 font-medium">Jumlah Amaun Dipilih</p>
+                <p id="pilihanAmaunDisplay" class="text-2xl font-black text-[#2b82ea] mt-1">RM1,000</p>
+            </div>
+
+            <form id="paymentForm" class="space-y-4" onsubmit="hantarBayaran(event)">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Penuh (Seperti dalam IC)</label>
+                    <input type="text" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2b82ea]" placeholder="Masukkan nama penuh anda">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nombor Kad Pengenalan</label>
+                    <input type="text" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2b82ea]" placeholder="Contoh: 950102145566">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Pilih Bank Anda</label>
+                    <select required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2b82ea]">
+                        <option value="">-- Sila Pilih Bank --</option>
+                        <option value="maybank">Maybank</option>
+                        <option value="cimb">CIMB Bank</option>
+                        <option value="public">Public Bank</option>
+                        <option value="rhb">RHB Bank</option>
+                        <option value="hongleong">Hong Leong Bank</option>
+                        <option value="ambank">AmBank</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nombor Akaun Bank</label>
+                    <input type="number" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2b82ea]" placeholder="Masukkan nombor akaun">
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 px-4 rounded-full text-center text-base shadow-md transition transform active:scale-95 cursor-pointer">
+                        Sahkan Pembayaran Balik
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="bg-white border-t border-gray-200 grid grid-cols-3 py-2 text-center sticky bottom-0 z-50">
+        <div onclick="kembaliKeUtama()" id="nav-pinjaman" class="text-[#2b82ea] flex flex-col items-center justify-center cursor-pointer">
+            <i class="fas fa-wallet text-lg"></i>
+            <span class="text-[10px] font-bold mt-1">Pinjaman</span>
+        </div>
+        <div class="text-gray-400 hover:text-gray-600 flex flex-col items-center justify-center cursor-pointer">
+            <i class="fas fa-file-alt text-lg"></i>
+            <span class="text-[10px] mt-1">Pesanan</span>
+        </div>
+        <div class="text-gray-400 hover:text-gray-600 flex flex-col items-center justify-center cursor-pointer">
+            <i class="fas fa-user text-lg"></i>
+            <span class="text-[10px] mt-1">Individu</span>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mengemas kini nilai paparan pada slider
+        function updateLoanAmount(val) {
+            let formattedVal = Number(val).toLocaleString('en-US');
+            document.getElementById('loanAmountDisplay').innerText = "RM" + formattedVal;
+        }
+
+        // Fungsi apabila butang "Membuat Bayaran Balik" ditekan
+        function pergiKeBayaran() {
+            let amaunSemasa = document.getElementById('loanSlider').value;
+            let formattedAmaun = Number(amaunSemasa).toLocaleString('en-US');
+            
+            // Masukkan nilai amaun slider ke dalam paparan borang bayaran
+            document.getElementById('pilihanAmaunDisplay').innerText = "RM" + formattedAmaun;
+
+            // Sembunyikan halaman utama, paparkan halaman borang bayaran
+            document.getElementById('halaman-utama').classList.add('hidden');
+            document.getElementById('halaman-bayaran').classList.remove('hidden');
+        }
+
+        // Fungsi untuk kembali ke halaman utama dari borang bayaran
+        function kembaliKeUtama() {
+            document.getElementById('halaman-bayaran').classList.add('hidden');
+            document.getElementById('halaman-utama').classList.remove('hidden');
+        }
+
+        // Fungsi simulasi hantar maklumat borang
+        function hantarBayaran(event) {
+            event.preventDefault();
+            alert("Maklumat pembayaran balik anda telah berjaya dihantar untuk diproses!");
+            kembaliKeUtama();
+        }
+    </script>
+</body>
+</html>
