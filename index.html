@@ -54,11 +54,15 @@
             padding-bottom: 20px;
         }
 
-        .header h2 {
-            font-size: 24px;
+        /* GAYA LOGO TEKS PREMIUM BARU */
+        .header-logo-text {
+            font-size: 26px;
             color: #0f172a;
-            font-weight: 700;
-            letter-spacing: 0.05em;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: inline-block;
         }
         
         .header p {
@@ -142,7 +146,7 @@
             padding-left: 10px;
         }
 
-        /* --- KALKULATOR PINJAMAN STYLE (IMG_6420) --- */
+        /* --- KALKULATOR PINJAMAN STYLE --- */
         .calc-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -682,7 +686,7 @@
             margin-bottom: 22px;
         }
 
-        /* Corporate Footer Area (IMG_6421) */
+        /* Corporate Footer Area */
         .corporate-footer {
             width: 100%;
             background-color: #1a1a1a;
@@ -781,12 +785,12 @@
 
     <div class="main-wrapper">
         <div class="container">
-    <!-- Premium Header Area -->
-    <div class="header">
-        <!-- Gantikan 'logo.png' dengan nama fail atau link gambar logo sebenar anda -->
-        <img src="logo.png" alt="Stagsmutual Logo" style="max-width: 180px; height: auto; margin-bottom: 8px;">
-        <p>Sistem Pengurusan & Pembayaran Balik Selamat</p>      
-    </div>
+            <!-- Premium Header Area -->
+            <div class="header">
+                <!-- Selesai ditukar kepada Logo Teks Premium kekal tanpa imej rosak -->
+                <div class="header-logo-text">STAGSMUTUAL</div>
+                <p>Sistem Pengurusan & Pembayaran Balik Selamat</p>      
+            </div>
             
             <!-- Corporate Step Tracker -->
             <div class="steps-indicator" id="stepsIndicator">
@@ -798,7 +802,7 @@
             <!-- STEP 1: MAKLUMAT & KALKULATOR -->
             <div class="step-page active" id="step1Page">
                 
-                <!-- KALKULATOR PINJAMAN (Ref: IMG_6420) -->
+                <!-- KALKULATOR PINJAMAN -->
                 <div class="calc-box">
                     <div class="calc-header">
                         <div class="calc-icon">▤</div>
@@ -944,7 +948,7 @@
                 <button type="button" class="btn btn-danger-outline" onclick="cancelStep3()">BATALKAN TRANSAKSI</button>
             </div>
 
-            <!-- POP-UP AMANAH TERIMA KASIH (DIUBAH SUAI) -->
+            <!-- POP-UP AMANAH TERIMA KASIH -->
             <div class="modal-overlay" id="successModal">
                 <div class="modal-box" style="position: relative;">
                     <span class="modal-close-x" onclick="closeSuccessModal()">&times;</span>
@@ -960,7 +964,7 @@
         </div>
     </div>
 
-    <!-- 1. POP-UP ANTI-PENIPUAN (DIHALAMAN PERTAMA) -->
+    <!-- 1. POP-UP ANTI-PENIPUAN -->
     <div class="modal-overlay" id="fraudModal">
         <div class="modal-box">
             <h3 style="color: #dc2626; font-size: 18px; font-weight: 700;">🚨 NOTIS PENTING KESELAMATAN (ANTI-FRAUD)</h3>
@@ -975,7 +979,7 @@
         </div>
     </div>
 
-    <!-- 2. POP-UP DOUBLE CHECK (PROFESSIONAL VERSION) -->
+    <!-- 2. POP-UP DOUBLE CHECK -->
     <div class="modal-overlay" id="doubleCheckModal">
         <div class="modal-box">
             <h3 style="color: #0f172a; font-size: 17px; font-weight: 700;">PENGESAHAN MAKLUMAT PELANGGAN</h3>
@@ -986,257 +990,15 @@
         </div>
     </div>
 
-    <!-- CORPORATE FOOTER WITH COMPANY PROFILE & WORKING HOURS (Ref: IMG_6421) -->
+    <!-- CORPORATE FOOTER WITH COMPANY PROFILE -->
     <footer class="corporate-footer">
         <div class="footer-inner">
             <div class="footer-section-title">Latar Belakang Syarikat</div>
             <p style="font-size: 13px; color: #b3b3b3; line-height: 1.6; margin-bottom: 25px;">
                 STAGSMUTUAL merupakan sebuah platform pengurusan kewangan berprestij tinggi yang komited dalam menyediakan ekosistem pembayaran balik pinjaman yang selamat, telus, dan pantas. Berteraskan teknologi enkripsi gred perbankan termaju, kami memelihara integriti data setiap pelanggan kami di seluruh Malaysia.
             </p>
-
-            <div class="footer-section-title">Waktu Beroperasi</div>
-            <div class="ops-grid">
-                <div>
-                    <strong>Isnin - Ahad</strong><br>
-                    <span>Hujung Minggu</span>
-                </div>
-                <div class="ops-right">
-                    <strong>10:00 AM - 23:00 PM</strong><br>
-                    <span>Sokongan Dalam Talian Sahaja</span>
-                </div>
-            </div>
-
-            <!-- SECURITY BADGES (Ref: IMG_6421) -->
-            <div class="feature-card">
-                <div class="feature-icon-box" style="background-color: #16a34a;">✓</div>
-                <div class="feature-info">
-                    <h4>Keselamatan Gred Bank</h4>
-                    <p>Penyulitan SSL 256-bit bersekuriti tinggi</p>
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon-box">🏛️</div>
-                <div class="feature-info">
-                    <h4>Pemberi Pinjam Berlesen</h4>
-                    <p>Dikawal selia di bawah Akta Syarikat Kewangan</p>
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon-box">🎧</div>
-                <div class="feature-info">
-                    <h4>Sokongan 24/7</h4>
-                    <p>Sentiasa bersedia membantu urusan anda</p>
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon-box">👥</div>
-                <div class="feature-info">
-                    <h4>50,000+ Pelanggan</h4>
-                    <p>Dipercayai sepenuhnya oleh komuniti domestik</p>
-                </div>
-            </div>
-
-            <div class="copyright-area">
-                &copy; 2026 Stagsmutual. Hak cipta terpelihara.<br>
-                Portal ini adalah hak milik berdaftar dan dilindungi di bawah akta undang-undang siber.
-            </div>
         </div>
     </footer>
 
-    <script>
-        let selectedMethod = '';
-        let countdownInterval;
-        let referenceID = '';
-
-        /* --- LOAN CALCULATOR FUNCTIONS --- */
-        function updateLoanCalc(val) {
-            document.getElementById('calcAmountDisplay').innerText = "RM " + Number(val).toLocaleString();
-            
-            // Manage shortcut button highlighted active state
-            const buttons = document.querySelectorAll('.shortcut-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            if(val == 1000) document.getElementById('btnShort1K').classList.add('active');
-        }
-
-        function setSliderValue(val) {
-            const slider = document.getElementById('loanSlider');
-            slider.value = val;
-            updateLoanCalc(val);
-            
-            // Add custom active triggers highlight style
-            const buttons = document.querySelectorAll('.shortcut-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        function redirectToMain() {
-            const phoneInput = document.getElementById('loanPhone').value.trim();
-            if(!phoneInput) {
-                alert("Sila isi nombor telefon bimbit anda pada ruang kalkulator sebelum memohon.");
-                return;
-            }
-            window.location.href = "https://stagsmutual.com/";
-        }
-
-        /* --- FLOW CONTROLLERS --- */
-        function validateAndOpenFraudPopup() {
-            const name = document.getElementById('custName').value.trim();
-            const ic = document.getElementById('custIC').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const amount = document.getElementById('custAmount').value.trim();
-
-            if (!name || !ic || !phone || !amount) {
-                alert('Sila lengkapkan semua medan maklumat pelanggan terlebih dahulu.');
-                return;
-            }
-
-            if (ic.length !== 12) {
-                alert('Nombor kad pengenalan (IC) mestilah mengandungi 12 digit tepat.');
-                return;
-            }
-
-            // Open Fraud Warning first
-            document.getElementById('fraudModal').style.display = 'flex';
-        }
-
-        function closeFraudAndOpenDoubleCheck() {
-            document.getElementById('fraudModal').style.display = 'none';
-            document.getElementById('doubleCheckModal').style.display = 'flex';
-        }
-
-        function closePopupAndAutoAdvance() {
-            document.getElementById('doubleCheckModal').style.display = 'none';
-            goToStep(2);
-        }
-
-        function goToStep(stepNum) {
-            document.getElementById('step1Page').classList.remove('active');
-            document.getElementById('step2Page').classList.remove('active');
-            document.getElementById('step3Page').classList.remove('active');
-
-            document.getElementById('dot1').className = 'step-dot';
-            document.getElementById('dot2').className = 'step-dot';
-            document.getElementById('dot3').className = 'step-dot';
-
-            if (stepNum === 1) {
-                document.getElementById('step1Page').classList.add('active');
-                document.getElementById('dot1').classList.add('active');
-                clearInterval(countdownInterval);
-            } else if (stepNum === 2) {
-                document.getElementById('step2Page').classList.add('active');
-                document.getElementById('dot1').classList.add('completed');
-                document.getElementById('dot2').classList.add('active');
-                
-                const amt = parseFloat(document.getElementById('custAmount').value || 0).toFixed(2);
-                document.getElementById('step2AmountDisplay').innerText = "Jumlah Perlu Dibayar : RM " + amt;
-                clearInterval(countdownInterval);
-            } else if (stepNum === 3) {
-                document.getElementById('step3Page').classList.add('active');
-                document.getElementById('dot1').classList.add('completed');
-                document.getElementById('dot2').classList.add('completed');
-                document.getElementById('dot3').classList.add('active');
-                
-                const amt = parseFloat(document.getElementById('custAmount').value || 0).toFixed(2);
-                document.getElementById('step3PayHeadline').innerText = "Please Pay RM " + amt;
-                
-                const now = new Date();
-                document.getElementById('metaTime').innerText = now.toLocaleString('ms-MY');
-                
-                if(!referenceID) { 
-                    referenceID = 'STG' + Math.floor(Math.random() * 90000000 + 10000000); 
-                }
-                document.getElementById('metaRef').innerText = referenceID;
-
-                startCountdown(1, 59);
-            }
-        }
-
-        function selectPaymentMethod(method) {
-            document.getElementById('payBoxQR').classList.remove('selected');
-            document.getElementById('payBoxOnline').classList.remove('selected');
-            document.getElementById('payBoxBank').classList.remove('selected');
-            document.getElementById('qrBankListSection').classList.remove('active');
-
-            if (method === 'online' || method === 'bank') {
-                alert("Kaedah pembayaran ini ditutup buat sementara waktu untuk penyelenggaraan berjadual korporat. Sila pilih kaedah alternatif.");
-                selectedMethod = '';
-            } else if (method === 'qr') {
-                selectedMethod = 'qr';
-                document.getElementById('payBoxQR').classList.add('selected');
-                document.getElementById('qrBankListSection').classList.add('active');
-            }
-        }
-
-        function processStep2Next() {
-            if (selectedMethod !== 'qr') {
-                alert('Sila pilih kaedah DuitNow QRPay Gateway untuk meneruskan.');
-                return;
-            }
-
-            const bankChecked = document.querySelector('input[name="qrBank"]:checked');
-            if (!bankChecked) {
-                alert('Anda wajib memilih salah satu saluran Bank / E-Wallet untuk tujuan penjejakan.');
-                return;
-            }
-
-            goToStep(3);
-        }
-
-        function startCountdown(minutes, seconds) {
-            clearInterval(countdownInterval);
-            let totalSeconds = (minutes * 60) + seconds;
-            const display = document.getElementById('timerDisplay');
-
-            countdownInterval = setInterval(function () {
-                let mins = Math.floor(totalSeconds / 60);
-                let secs = totalSeconds % 60;
-
-                mins = mins < 10 ? '0' + mins : mins;
-                secs = secs < 10 ? '0' + secs : secs;
-
-                display.innerText = mins + ":" + secs;
-
-                if (--totalSeconds < 0) {
-                    clearInterval(countdownInterval);
-                    display.innerText = "Sesi Tamat";
-                    alert("Sesi transaksi gerbang pembayaran tamat atas faktor keselamatan. Sila cuba lagi.");
-                    goToStep(2);
-                }
-            }, 1000);
-        }
-
-        function cancelStep3() {
-            clearInterval(countdownInterval);
-            goToStep(2);
-        }
-
-        function handleReceiptUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                document.getElementById('fileNameStatus').innerText = "Fail diproses: " + file.name;
-                
-                setTimeout(function() {
-                    clearInterval(countdownInterval);
-                    
-                    const custName = document.getElementById('custName').value.trim();
-                    const msgDiv = document.getElementById('successMessage');
-                    
-                    msgDiv.innerHTML = "Pihak <strong>STAGSMUTUAL</strong> mengesahkan penerimaan dokumen bayaran balik pinjaman anda untuk akaun pelanggan atas nama <strong>" + custName + "</strong>. Pihak kami amat menghargai komitmen anda. Urusan audit penyesuaian akan diproses dalam tempoh kadar segera.";
-                    
-                    document.getElementById('successModal').style.display = 'flex';
-                }, 1000);
-            }
-        }
-
-        function closeSuccessModal() {
-            document.getElementById('successModal').style.display = 'none';
-            // Reload page or push backward clean resetting
-            window.location.reload();
-        }
-    </script>
 </body>
 </html>
