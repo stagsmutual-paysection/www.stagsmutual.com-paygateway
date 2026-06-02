@@ -7,7 +7,7 @@
     <!-- Google Fonts for Corporate/Banking Premium Look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -51,10 +51,38 @@
             text-align: center;
             margin-bottom: 30px;
             border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* GAYA LOGO TEKS PREMIUM BARU */
+        /* 🛡️ REKA BENTUK LOGO GRAFIK (CSS SHIELD LOGO) */
+        .corporate-logo-graphic {
+            width: 65px;
+            height: 70px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            margin-bottom: 15px;
+            position: relative;
+            border-radius: 10px 10px 35px 35px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border: 3px solid #d4af37; /* Kemasan Bingkai Emas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Simbol Dalam Logo (Gaya Monogram S & M Tradisional) */
+        .corporate-logo-graphic::before {
+            content: "S";
+            font-size: 32px;
+            color: #d4af37; /* Warna Emas Premium */
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Gaya Tulisan Nama Laman Web */
         .header-logo-text {
             font-size: 26px;
             color: #0f172a;
@@ -693,7 +721,7 @@
             color: #ffffff;
             padding: 40px 20px;
             margin-top: 50px;
-            border-top: 3px solid #d4af37; /* Gold accent link to premium */
+            border-top: 3px solid #d4af37;
             display: flex;
             justify-content: center;
         }
@@ -727,49 +755,6 @@
             text-align: right;
         }
 
-        .feature-card {
-            background: #262626;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid #333333;
-        }
-
-        .feature-icon-box {
-            width: 40px;
-            height: 40px;
-            background-color: #2563eb;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 16px;
-        }
-
-        .feature-info h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .feature-info p {
-            font-size: 12px;
-            color: #999999;
-            margin-top: 2px;
-        }
-
-        .copyright-area {
-            text-align: center;
-            font-size: 12px;
-            color: #666666;
-            margin-top: 30px;
-            line-height: 1.6;
-        }
-
         .secure-footer-banner {
             display: flex;
             justify-content: center;
@@ -787,7 +772,9 @@
         <div class="container">
             <!-- Premium Header Area -->
             <div class="header">
-                <!-- Selesai ditukar kepada Logo Teks Premium kekal tanpa imej rosak -->
+                <!-- 🛡️ LOGO EMAS & BIRU BARU DI ATAS TULISAN -->
+                <div class="corporate-logo-graphic"></div>
+                
                 <div class="header-logo-text">STAGSMUTUAL</div>
                 <p>Sistem Pengurusan & Pembayaran Balik Selamat</p>      
             </div>
@@ -964,7 +951,7 @@
         </div>
     </div>
 
-    <!-- 1. POP-UP ANTI-PENIPUAN -->
+    <!-- POP-UP ANTI-PENIPUAN -->
     <div class="modal-overlay" id="fraudModal">
         <div class="modal-box">
             <h3 style="color: #dc2626; font-size: 18px; font-weight: 700;">🚨 NOTIS PENTING KESELAMATAN (ANTI-FRAUD)</h3>
@@ -979,7 +966,7 @@
         </div>
     </div>
 
-    <!-- 2. POP-UP DOUBLE CHECK -->
+    <!-- POP-UP DOUBLE CHECK -->
     <div class="modal-overlay" id="doubleCheckModal">
         <div class="modal-box">
             <h3 style="color: #0f172a; font-size: 17px; font-weight: 700;">PENGESAHAN MAKLUMAT PELANGGAN</h3>
@@ -990,7 +977,7 @@
         </div>
     </div>
 
-    <!-- CORPORATE FOOTER WITH COMPANY PROFILE -->
+    <!-- CORPORATE FOOTER -->
     <footer class="corporate-footer">
         <div class="footer-inner">
             <div class="footer-section-title">Latar Belakang Syarikat</div>
