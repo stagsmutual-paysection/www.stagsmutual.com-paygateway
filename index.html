@@ -6,9 +6,6 @@
     <title>Stagsmutual - Laman Web Pembayaran Pinjaman</title>
     <meta property="og:title" content="STAGSMUTUAL">
     <meta property="og:description" content="Sistem Pengurusan & Pembayaran Balik Selamat">
-    <meta property="og:image" content="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +58,6 @@
             align-items: center;
         }
 
-        /* 🖼️ LOGO IMEJ (Menggantikan CSS Shield) */
         .corporate-logo-img {
             width: 65px;
             height: 70px;
@@ -736,8 +732,8 @@
         <div class="container">
             <!-- Premium Header Area -->
             <div class="header">
-                <!-- 🖼️ LOGO BARU (Saiz sama seperti logo lama: 65px x 70px) -->
-                <img src="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png" alt="STAGSMUTUAL Logo" class="corporate-logo-img">
+                <!-- 🖼️ LOGO DITUKAR KEPADA IMG_6382.png -->
+                <img src="IMG_6382.png" alt="STAGSMUTUAL Logo" class="corporate-logo-img">
                 
                 <div class="header-logo-text">STAGSMUTUAL</div>
                 <p>Sistem Pengurusan & Pembayaran Balik Selamat</p>      
@@ -753,7 +749,7 @@
             <!-- STEP 1: MAKLUMAT & KALKULATOR -->
             <div class="step-page active" id="step1Page">
                 
-                <!-- LANGKAH 1 - MAKLUMAT PEMBAYAR (KINI DI ATAS KALKULATOR) -->
+                <!-- LANGKAH 1 - MAKLUMAT PEMBAYAR (DI ATAS KALKULATOR) -->
                 <div class="form-section">
                     <div class="section-title">
                         LANGKAH 1 - MAKLUMAT PEMBAYAR
@@ -820,7 +816,7 @@
                     </div>
                 </div>
 
-                <!-- KALKULATOR PINJAMAN (KINI DI BAWAH BORANG MAKLUMAT) -->
+                <!-- KALKULATOR PINJAMAN (DI BAWAH BORANG MAKLUMAT) -->
                 <div class="calc-box">
                     <div class="calc-header">
                         <div class="calc-icon">▤</div>
@@ -869,7 +865,6 @@
                     </div>
                 </div>
 
-                <!-- Butang Seterusnya Borang Utama -->
                 <button type="button" class="next-btn" onclick="validateAndOpenFraudPopup()">
                     Seterusnya
                 </button>
@@ -1005,11 +1000,9 @@
         let selectedMethod = '';
         let timerInterval = null;
 
-        // Fungsi Kalkulator Pinjaman (Slider)
         function updateLoanCalc(val) {
             document.getElementById('calcAmountDisplay').innerText = "RM " + Number(val).toLocaleString();
             
-            // Buang kelas aktif dari semua butang pintasan
             const btns = document.querySelectorAll('.shortcut-grid .shortcut-btn');
             btns.forEach(b => b.classList.remove('active'));
         }
@@ -1019,7 +1012,6 @@
             slider.value = val;
             updateLoanCalc(val);
             
-            // Cari butang pintasan yang sepadan dan jadikannya aktif
             const btns = document.querySelectorAll('.shortcut-grid .shortcut-btn');
             btns.forEach(b => {
                 if(parseInt(b.innerText.replace('K','000')) === val || parseInt(b.innerText) === val) {
@@ -1028,7 +1020,6 @@
             });
         }
 
-        // Fungsi Butang "Mohon Sekarang" (Mengisi data terus ke borang atas)
         function redirectToMain() {
             const phoneVal = document.getElementById('loanPhone').value;
             const sliderVal = document.getElementById('loanSlider').value;
@@ -1039,15 +1030,11 @@
                 return;
             }
             
-            // Mengisi auto maklumat ke bahagian atas
             document.getElementById('phoneNumber').value = "0" + phoneVal;
             document.getElementById('paymentAmount').value = parseFloat(sliderVal).toFixed(2);
-            
-            // Fokus semula ke ruangan nama penuh pembayar
             document.getElementById('fullName').focus();
         }
 
-        // Navigasi Langkah
         function goToStep(stepNum) {
             document.getElementById('step1Page').classList.remove('active');
             document.getElementById('step2Page').classList.remove('active');
@@ -1080,7 +1067,6 @@
             }
         }
 
-        // Validasi Borang & Pop-up
         function validateAndOpenFraudPopup() {
             const name = document.getElementById('fullName').value.trim();
             const ic = document.getElementById('icNumber').value.trim();
